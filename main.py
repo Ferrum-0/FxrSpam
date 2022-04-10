@@ -14,7 +14,7 @@ f'''
                                                                 
 ''')
 
-pasteTime = int(input("How long do you want to spam for? (SECONDS): "))
+pasteTime = int(input("How long do you want to spam for? (Seconds): "))
 pastePhrase = input("Enter what you want to spam: ")
 
 if pastePhrase:
