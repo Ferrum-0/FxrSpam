@@ -1,20 +1,25 @@
 import pyautogui as pg
 import time as t
 
-class bcolors:
-    GREEN = '\033[92m' #GREEN
-    YELLOW = '\033[93m' #YELLOW
-    RED = '\033[91m' #RED
+print(
+f'''
+###################################################################
+#  ______  __   __  _____     _____   _____               __  __  #
+# |  ____| \ \ / / |  __ \   / ____| |  __ \      /\     |  \/  | #
+# | |__     \ V /  | |__) | | (___   | |__) |    /  \    | \  / | #
+# |  __|     > <   |  _  /   \___ \  |  ___/    / /\ \   | |\/| | #
+# | |       / . \  | | \ \   ____) | | |       / ____ \  | |  | | #
+# |_|      /_/ \_\ |_|  \_\ |_____/  |_|      /_/    \_\ |_|  |_| #
+###################################################################                                                                
+                                                                
+''')
 
 pasteTime = int(input("How long do you want to spam for? (SECONDS): "))
-if pasteTime:
-    print(f"pasteTime: {pasteTime}")
-else:
-    print("Error. Restart Code.")
-
 pastePhrase = input("Enter what you want to spam: ")
+
 if pastePhrase:
-    print(f"pastePhrase: {pastePhrase}")
+    print(f"Phrase: {pastePhrase}")
+    print(f"Time: {pasteTime}")
     t.sleep(1)
     print(3)
     t.sleep(1)
@@ -23,7 +28,7 @@ if pastePhrase:
     print("Spamming Now.")
     t.sleep(1)
 else: 
-    print("Error. Restart Code.")
+    print("Error.")
 
 t_end = t.time() + 1 * pasteTime
 
