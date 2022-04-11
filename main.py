@@ -4,7 +4,7 @@ import socket as s
 import wmi
 import ctypes
 
-ctypes.windll.kernel32.SetConsoleTitleW("Fxr Spam - V2.2")
+ctypes.windll.kernel32.SetConsoleTitleW("FxrSpam - V2.2")
 
 print('''
 ###################################################################
