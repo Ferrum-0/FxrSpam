@@ -40,6 +40,8 @@ def pcInfo():
     print(f"Number Of Processors: {my_system.NumberOfProcessors}")
     print(f"System Type: {my_system.SystemType}")
     print(f"System Family: {my_system.SystemFamily}")
+    t.sleep(5)
+    
 
 def Spammer():
     pasteTime = int(input("How long do you want to spam for? (Seconds): "))
