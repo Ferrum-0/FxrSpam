@@ -4,6 +4,7 @@ import socket as s
 import wmi
 import ctypes
 import pyfiglet
+import pyfiglet.fonts
 
 ctypes.windll.kernel32.SetConsoleTitleW("FxrSys - v2.3")
 
