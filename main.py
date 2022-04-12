@@ -45,9 +45,6 @@ def main():
         print(f"Number Of Processors: {my_system.NumberOfProcessors}")
         print(f"System Type: {my_system.SystemType}")
         print(f"System Family: {my_system.SystemFamily}")
-        t.sleep(5)
-        
-        main()
         
 
     def Spammer():
@@ -79,23 +76,26 @@ def main():
         spam()
 
         print("Finished Spamming.")
-        t.sleep(2)
-        main()
+        
 
 
     def asciiArt():
-        asciiArtText = input("Enter what you want to become ascii art (TEXT ONLY): ")
-        result = pyfiglet.figlet_format(asciiArtText, "Big")
+        # asciiArtText = input("Enter what you want to become ascii art (TEXT ONLY): ")
+        result = pyfiglet.figlet_format(input("Enter what you want to become ascii art (TEXT ONLY): "), "Big")
         print(result)
-        t.sleep(5)
-        main()
 
 
     if option == int(1):
         Spammer()
+        t.sleep(3)
+        main()
     if option == int(2):
         pcInfo()
+        t.sleep(5)
+        main()
     if option == int(3):
         asciiArt()
+        t.sleep(5)
+        main()
 
 main()
