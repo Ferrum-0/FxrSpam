@@ -1,3 +1,5 @@
+#  FxrSys created and codded by Ferrum.
+
 import pyautogui as pg
 import time as t
 import socket as s
@@ -28,26 +30,9 @@ def main():
     ''')
 
     option = int(input("Enter the what you want to do (Type the number): "))
-
-    def pcInfo():
-        c = wmi.WMI()   
-        my_system = c.Win32_ComputerSystem()[0]
-
-        try:
-            host_name = s.gethostname()
-            host_ip = s.gethostbyname(host_name)
-            print(f"Hostname :  {host_name}")
-            print(f"IP : {host_ip}")
-        except:
-            print("Unable to get Hostname and IP")
-        print(f"Manufacturer: {my_system.Manufacturer}")
-        print(f"Model: {my_system. Model}")
-        print(f"Name: {my_system.Name}")
-        print(f"Number Of Processors: {my_system.NumberOfProcessors}")
-        print(f"System Type: {my_system.SystemType}")
-        print(f"System Family: {my_system.SystemFamily}")
-        
-
+  
+  
+##### Options
     def Spammer():
         pasteTime = int(input("How long do you want to spam for? (Seconds): "))
         pastePhrase = input("Enter what you want to spam: ")
@@ -73,12 +58,26 @@ def main():
                 t.sleep(0.1)
                 pg.hotkey("enter")
                 spam()
-
         spam()
-
-        print("Finished Spamming.")
+        print("Finished Spamming.") 
         
+    def pcInfo():
+        c = wmi.WMI()   
+        my_system = c.Win32_ComputerSystem()[0]
 
+        try:
+            host_name = s.gethostname()
+            host_ip = s.gethostbyname(host_name)
+            print(f"Hostname :  {host_name}")
+            print(f"IP : {host_ip}")
+        except:
+            print("Unable to get Hostname and IP")
+        print(f"Manufacturer: {my_system.Manufacturer}")
+        print(f"Model: {my_system. Model}")
+        print(f"Name: {my_system.Name}")
+        print(f"Number Of Processors: {my_system.NumberOfProcessors}")
+        print(f"System Type: {my_system.SystemType}")
+        print(f"System Family: {my_system.SystemFamily}")
 
     def asciiArt():
         # asciiArtText = input("Enter what you want to become ascii art (TEXT ONLY): ")
