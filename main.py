@@ -30,7 +30,7 @@ def main():
     1) Spam
     2) Display Computer Info
     3) Ascii Art (Text)
-    4) IP Tracker (Coming Soon)
+    4) IP Tracker
     ''')
 
     option = int(input("Enter the what you want to do (Type the number): "))
