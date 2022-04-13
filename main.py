@@ -8,11 +8,10 @@ import pyfiglet
 import pyfiglet.fonts
 import os
 import json
-from urllib.request import urlopen
 from json import load
 import requests
 
-ctypes.windll.kernel32.SetConsoleTitleW("FxrSys - v2.3")
+ctypes.windll.kernel32.SetConsoleTitleW("FxrSys - v2.4")
 
 
 def main():
