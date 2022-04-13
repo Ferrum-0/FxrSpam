@@ -5,8 +5,13 @@ import wmi
 import ctypes
 import pyfiglet
 import pyfiglet.fonts
+import os
+import json
+from urllib.request import urlopen
+from json import load
 
 ctypes.windll.kernel32.SetConsoleTitleW("FxrSys - v2.3")
+
 
 def main():
     print('''
@@ -24,13 +29,13 @@ def main():
     1) Spam
     2) Display Computer Info
     3) Ascii Art (Text)
-    4) Coming Soon
+    4) IP Tracker (Coming Soon)
     ''')
 
     option = int(input("Enter the what you want to do (Type the number): "))
 
     def pcInfo():
-        c = wmi.WMI()   
+        c = wmi.WMI()
         my_system = c.Win32_ComputerSystem()[0]
 
         try:
@@ -46,7 +51,6 @@ def main():
         print(f"Number Of Processors: {my_system.NumberOfProcessors}")
         print(f"System Type: {my_system.SystemType}")
         print(f"System Family: {my_system.SystemFamily}")
-        
 
     def Spammer():
         pasteTime = int(input("How long do you want to spam for? (Seconds): "))
@@ -62,14 +66,14 @@ def main():
             t.sleep(1)
             print("Spamming Now.")
             t.sleep(1)
-        else: 
+        else:
             print("Error.")
 
         t_end = t.time() + 1 * pasteTime
 
         def spam():
             while t.time() < t_end:
-                pg.typewrite(pastePhrase) 
+                pg.typewrite(pastePhrase)
                 t.sleep(0.1)
                 pg.hotkey("enter")
                 spam()
@@ -77,14 +81,26 @@ def main():
         spam()
 
         print("Finished Spamming.")
-        
-
 
     def asciiArt():
         # asciiArtText = input("Enter what you want to become ascii art (TEXT ONLY): ")
-        result = pyfiglet.figlet_format(input("Enter what you want to become ascii art (TEXT ONLY): "), "Big")
+        result = pyfiglet.figlet_format(
+            input("Enter what you want to become ascii art (TEXT ONLY): "), "Big")
         print(result)
 
+    def ipTracker():
+        addr = ' '
+        if addr == '':
+            url = 'https://ipinfo.io/json'
+        else:
+            url = 'https://ipinfo.io/' + addr + '/json'
+        res = urlopen(url)
+        #response from url(if res==None then check connection)
+        data = load(res)
+        #will load the json response into data
+        for attr in data.keys():
+            #will print the data line by line
+            print(attr,' '*13+'\t->\t',data[attr])
 
     if option == int(1):
         Spammer()
@@ -98,5 +114,10 @@ def main():
         asciiArt()
         t.sleep(5)
         main()
+    # if option == int(4):
+    #     ipTracker()
+    #     t.sleep(5)
+    #     main()
+
 
 main()
