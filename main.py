@@ -101,25 +101,31 @@ def main():
 
     def counting():
         printWrite = input("Print or Write numbers? (P/W): ")
-        print(printWrite)
-        if printWrite == 'p' | 'P':
+            
+        def print0():
             endNumber = int(input("Enter the number you want to count upto: "))
             for i in range(endNumber):
                 print(i)
 
-        elif printWrite == 'w' | 'W':
-            endNumber = int(input("Enter the number you want to count upto: "))
 
-            print(3)
-            t.sleep(1)
-            print(2)
-            t.sleep(1)
-            print(1)
-            t.sleep(1)
-            print("Counting Starting...")
+        def write():
+                endNumber = int(input("Enter the number you want to count upto: "))
 
-            for i in range(endNumber):
-                pg.typewrite(i)
+                print(3)
+                t.sleep(1)
+                print(2)
+                t.sleep(1)
+                print(1)
+                t.sleep(1)
+                print("Counting Starting...")
+
+                for i in range(endNumber):
+                    pg.typewrite(i)
+
+        if printWrite == 'p' or 'P':
+            print0()
+        if printWrite == 'w' or 'W':
+            write()
 
     if option == int(1):
         Spammer()
