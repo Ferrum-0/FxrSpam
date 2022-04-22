@@ -10,8 +10,9 @@ import os
 import json
 from json import load
 import requests
+import pkg_resources
 
-ctypes.windll.kernel32.SetConsoleTitleW("FxrSys - v2.4")
+ctypes.windll.kernel32.SetConsoleTitleW("FxrSys - v2.5")
 
 
 def main():
