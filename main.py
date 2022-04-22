@@ -1,4 +1,5 @@
 from ipaddress import ip_address
+from itertools import count
 import pyautogui as pg
 import time as t
 import socket as s
@@ -32,6 +33,7 @@ def main():
     2) Display Computer Info
     3) Ascii Art (Text)
     4) IP Tracker
+    5) Counting (Text or Write)
     ''')
 
     option = int(input("Enter the what you want to do (Type the number): "))
@@ -96,7 +98,28 @@ def main():
         response = requests.get('https://ipgeolocation.abstractapi.com/v1/?api_key=' + YOUR_GEOLOCATION_KEY + '&ip_address=' + ip_address)
         result = json.dumps(json.loads(response.content), indent=1)
         print(result)
-        
+
+    def counting():
+        printWrite = input("Print or Write numbers? (P/W): ")
+        print(printWrite)
+        if printWrite == 'p' | 'P':
+            endNumber = int(input("Enter the number you want to count upto: "))
+            for i in range(endNumber):
+                print(i)
+
+        elif printWrite == 'w' | 'W':
+            endNumber = int(input("Enter the number you want to count upto: "))
+
+            print(3)
+            t.sleep(1)
+            print(2)
+            t.sleep(1)
+            print(1)
+            t.sleep(1)
+            print("Counting Starting...")
+
+            for i in range(endNumber):
+                pg.typewrite(i)
 
     if option == int(1):
         Spammer()
@@ -115,6 +138,10 @@ def main():
         t.sleep(5)
         main()
     if option == int(5):
+        counting()
+        t.sleep(2)
+        main()
+    if option >= int(6):
         print('Please provide a valid number.')
         t.sleep(2)
         main()
