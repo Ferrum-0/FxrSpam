@@ -185,36 +185,42 @@ def main():
         webhook()
 
 
-    if option == int(1):
-        Spammer()
-        t.sleep(3)
-        if "__main__" == __name__:
-            main()
-    if option == int(2):
-        pcInfo()
-        t.sleep(5)
-        if "__main__" == __name__:
-            main()
-    if option == int(3):
-        asciiArt()
-        t.sleep(5)
-        if "__main__" == __name__:
-            main()
-    if option == int(4):
-        ipTracker()
-        t.sleep(5)
-        if "__main__" == __name__:
-            main()
-    if option == int(5):
-        webhookTool()
-        t.sleep(2)
-        if "__main__" == __name__:
-            main()
-    if option >= int(6):
+    if != option:
         print('Please provide a valid number.')
         t.sleep(2)
         if "__main__" == __name__:
             main()
+    else: 
+        if option == int(1):
+            Spammer()
+            t.sleep(3)
+            if "__main__" == __name__:
+                main()
+        if option == int(2):
+            pcInfo()
+            t.sleep(5)
+            if "__main__" == __name__:
+                main()
+        if option == int(3):
+            asciiArt()
+            t.sleep(5)
+            if "__main__" == __name__:
+                main()
+        if option == int(4):
+            ipTracker()
+            t.sleep(5)
+            if "__main__" == __name__:
+                main()
+        if option == int(5):
+            webhookTool()
+            t.sleep(2)
+            if "__main__" == __name__:
+                main()
+        if option >= int(6):
+            print('Please provide a valid number.')
+            t.sleep(2)
+            if "__main__" == __name__:
+                main()
 
 
 if "__main__" == __name__:
