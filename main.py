@@ -128,7 +128,7 @@ def main():
     #         writeNum()
 
     def webhookTool():
-        print("Made by Pancakes#4891\nand laika#9603")
+        print("Made by Pancakes#4891 and laika#9603")
         print("\nStay mad if you think stealing this code is wrong.")
 
         t.sleep(1)
@@ -185,7 +185,7 @@ def main():
         webhook()
 
 
-    if != option:
+    if option is None:
         print('Please provide a valid number.')
         t.sleep(2)
         if "__main__" == __name__:
