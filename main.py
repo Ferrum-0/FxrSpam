@@ -33,6 +33,7 @@ def main():
     3) Ascii Art (Text)
     4) IP Tracker
     5) Webhook Tool
+    6) Counting
     ''')
 
     option = int(input("Enter the what you want to do (Type the number): "))
@@ -98,33 +99,36 @@ def main():
         result = json.dumps(json.loads(response.content), indent=1)
         print(result)
 
-    # def counting():
-    #     printWrite = input("Print or Write numbers? (P/W): ")
+    def counting():
+        printWrite = input("Print or Write numbers? (P/W): ")
             
-    #     def printNum():
-    #         endNumber = int(input("Enter the number you want to count upto: "))
-    #         for i in range(endNumber):
-    #             print(i)
+        def printNum():
+            endNumber = int(input("Enter the number you want to count upto: "))
+            for i in range(endNumber):
+                print(i + 1)
 
 
-    #     def writeNum():
-    #             endNumber = int(input("Enter the number you want to count upto: "))
+        def writeNum():
+                endNumber2 = int(input("Enter the number you want to count upto: "))
+                count = 1
 
-    #             print(3)
-    #             t.sleep(1)
-    #             print(2)
-    #             t.sleep(1)
-    #             print(1)
-    #             t.sleep(1)
-    #             print("Counting Starting...")
+                print(3)
+                t.sleep(1)
+                print(2)
+                t.sleep(1)
+                print(1)
+                t.sleep(1)
+                print("Counting Starting...")
 
-    #             for num in range(1, endNumber + 1):
-    #                 GUI.typewrite(num)
+                while count <= endNumber2:
+                    GUI.write(str(count))
+                    count += 1
 
-    #     if printWrite == 'p' or 'P':
-    #         printNum()
-    #     if printWrite == 'w' or 'W':
-    #         writeNum()
+        if printWrite in {'P', 'p'}:
+            printNum()
+
+        if printWrite in {'w', 'W'}:
+            writeNum()
 
     def webhookTool():
         print("Made by Pancakes#4891 and laika#9603")
@@ -209,7 +213,10 @@ def main():
         t.sleep(2)
         # if "__main__" == __name__:
         #     main()
-    if option >= int(6):
+    if option == int(6):
+        counting()
+        t.sleep(2)
+    if option >= int(7):
         print('Please provide a valid number.')
         t.sleep(2)
         # if "__main__" == __name__:
